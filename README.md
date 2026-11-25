@@ -40,7 +40,7 @@ build. Review GitHub's service terms before choosing a host.
 ## Research and review
 
 Volunteers can use `research.py` with a locally running
-[Ollama](https://github.com/ollama/ollama) server and an openly licensed model to
+[Ollama](https://github.com/ollama/ollama) server and an open-source-licensed model to
 produce a draft and a separate model critique from a built `site/data.json`:
 
 ```sh

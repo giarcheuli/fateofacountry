@@ -38,6 +38,19 @@ class IndicatorTests(unittest.TestCase):
         self.assertIn("a=1&amp;b=2", output)
         self.assertIn("No reviewed research", build.render([], [], "today"))
 
+    def test_failed_refresh_leaves_existing_site_untouched(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "site").mkdir()
+            (root / "site" / "index.html").write_text("previous")
+            (root / "site" / "data.json").write_text("previous data")
+            with patch.object(build, "ROOT", root), \
+                    patch("build.fetch_indicator", side_effect=OSError("source unavailable")):
+                with self.assertRaises(OSError):
+                    build.main()
+            self.assertEqual((root / "site" / "index.html").read_text(), "previous")
+            self.assertEqual((root / "site" / "data.json").read_text(), "previous data")
+
     def test_research_requires_valid_source_and_date(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "research.json"
