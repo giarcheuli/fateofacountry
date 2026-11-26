@@ -2,9 +2,16 @@
 
 A Georgia-first, evidence-linked civic information monitoring project. The repository is currently named `fateofacountry`.
 
-## Project documentation
+## Product and technical documentation
 
-- [Product and software documentation convention](docs/product-documentation.md)
+- [Vision](docs/vision.md)
+- [MVP requirements](docs/requirements.md)
+- [Architecture and implementation status](docs/architecture.md)
+- [Source strategy](docs/source-strategy.md)
+- [Decision 0001: Georgia-first local-first MVP](docs/decisions/0001-georgia-local-first-mvp.md)
 - [Publication synchronization contract](docs/publication-sync.md)
+- [Product and software documentation convention](docs/product-documentation.md)
 
-Coding assistants: start with [AGENTS.md](AGENTS.md), then read this documentation and the relevant project files before making changes. Keep implementation-facing product and technical documentation in GitHub and the matching Google Drive project knowledge.
+These documents are mirrored in the [Google Drive project folder](https://drive.google.com/drive/folders/1zSJjJO3B3lGLIeYaZKan8gMVKqTdOoWU). GitHub is the version-controlled reference for coding work; keep the Drive project knowledge current as well.
+
+Coding assistants: start with [AGENTS.md](AGENTS.md), then read the relevant product and technical docs before changing code. Distinguish approved decisions from open choices and implemented behavior.
